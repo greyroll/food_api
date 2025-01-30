@@ -1,0 +1,62 @@
+[
+    {
+        "icon": "🍏",
+        "name": "Apple",
+        "cat": "fruit",
+        "kcal": 45
+    },
+    {
+        "icon": "🍎",
+        "name": "Apple",
+        "cat": "fruit",
+        "kcal": 49
+    },
+    {
+        "icon": "🍌",
+        "name": "Banana",
+        "cat": "fruit",
+        "kcal": 95
+    },
+    {
+        "icon": "🥑",
+        "name": "Avocado",
+        "cat": "fruit",
+        "kcal": 160
+    },
+    {
+        "icon": "🍅",
+        "name": "Tomato",
+        "cat": "veggie",
+        "kcal": 20
+    },
+    {
+        "icon": "🥦",
+        "name": "Broccoli",
+        "cat": "veggie",
+        "kcal": 34
+    },
+    {
+        "icon": "🥕",
+        "name": "Carrot",
+        "cat": "veggie",
+        "kcal": 100
+    },
+    {
+        "icon": "🍪",
+        "name": "Cookie",
+        "cat": "sweets",
+        "kcal": 514
+    },
+    {
+        "icon": "🍩",
+        "name": "Donut",
+        "cat": "sweets",
+        "kcal": 300
+    },
+    {
+        "icon": "🍰",
+        "name": "Cake",
+        "cat": "sweets",
+        "kcal": 400
+    }
+]
