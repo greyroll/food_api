@@ -96,4 +96,4 @@ async def get_food_min_max_kcal():
 	max_food = orm_manager.fetch_max_kcal_food()
 	return {"message": {"min_food": min_food, "max_food": max_food}}
 
-uvicorn.run(app, host="127.0.0.1", port=8001)
+# uvicorn.run(app, host="127.0.0.1", port=8001)
