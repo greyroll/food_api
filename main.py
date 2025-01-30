@@ -1,5 +1,6 @@
 import uvicorn
 from fastapi import FastAPI, HTTPException, Query
+from starlette.middleware.cors import CORSMiddleware
 
 from orm_model import FoodManager
 
@@ -97,3 +98,19 @@ async def get_food_min_max_kcal():
 	return {"message": {"min_food": min_food, "max_food": max_food}}
 
 # uvicorn.run(app, host="127.0.0.1", port=8001)
+
+origins = [
+    "http://localhost",
+    "*"
+]
+
+def setup_cors(app):
+	app.add_middleware(
+        CORSMiddleware,
+        allow_origins=origins,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
+setup_cors(app)
