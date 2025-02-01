@@ -1,8 +1,8 @@
-import pytest
-from orm_model import FoodManager, Food
+from classes.food_manager import FoodManager
+from classes.orm_model import ORMManager
 
-
-orm_manager = FoodManager()
+orm_manager = ORMManager()
+food_manager = FoodManager(orm_manager)
 
 
 def test_create_tables():
@@ -25,3 +25,6 @@ def test_fetch_between():
 
 def test_fetch_max_kcal():
 	print(orm_manager.fetch_max_kcal_food())
+
+def test_get_all_food():
+	print(food_manager.get_all_food())
