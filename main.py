@@ -112,7 +112,7 @@ async def logout(request: Request):
 	return templates_response
 
 
-uvicorn.run(app, host="127.0.0.1", port=8001)
+# uvicorn.run(app, host="127.0.0.1", port=8001)
 
 origins = [
     "http://localhost",
