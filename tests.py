@@ -1,8 +1,12 @@
 from classes.food_manager import FoodManager
-from classes.orm_model import ORMManager
+from classes.food_orm_model import ORMManager
+from classes.user_orm_model import UserORMManager
 
 orm_manager = ORMManager()
 food_manager = FoodManager(orm_manager)
+user_manager = UserORMManager
+
+
 
 
 def test_create_tables():

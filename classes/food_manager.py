@@ -1,4 +1,4 @@
-from classes.orm_model import ORMManager, FoodDB
+from classes.food_orm_model import ORMManager, FoodDB
 from classes.pydantic_model import Food
 
 
@@ -42,3 +42,17 @@ class FoodManager:
 		min_food = Food.model_validate(self.orm_manager.fetch_min_kcal_food())
 		max_food = Food.model_validate(self.orm_manager.fetch_max_kcal_food())
 		return {"min_kcal_food": min_food, "max_kcal_food": max_food}
+
+	def get_min_kcal(self) -> Food:
+		"""
+		Возвращает продукты с минимальной калорийностью.
+		"""
+		min_food = Food.model_validate(self.orm_manager.fetch_min_kcal_food())
+		return min_food
+
+	def get_max_kcal(self) -> Food:
+		"""
+		Возвращает продукты с минимальной калорийностью.
+		"""
+		max_food = Food.model_validate(self.orm_manager.fetch_max_kcal_food())
+		return max_food

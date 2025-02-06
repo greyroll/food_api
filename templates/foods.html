@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>foods</title>
+</head>
+<body>
+    <h3>Food list</h3>
+    <ul>
+        {% for food in foods %}
+            <li>{{ food.icon }} {{ food.name }}. Категория: {{ food.cat }}. Калорийность: {{ food.kcal }}</li>
+        {% endfor %}
+    </ul>
+    <p><a href="/">На главную</a></p>
+    <p><a href="/logout">Выйти</a></p>
+</body>
+</html>
