@@ -27,6 +27,7 @@ class UserORMManager:
 			session.add(obj)
 			session.commit()
 			session.refresh(obj)
+		return obj
 
 	def add_all(self, objs: list[SQLModel]):
 		"""Добавляет список объектов SQLModel в базу данных."""
@@ -34,9 +35,18 @@ class UserORMManager:
 			session.add_all(objs)
 			session.commit()
 			session.refresh(objs)
+		return objs
 
 	def validate_login(self, email: str, password: str) -> Optional[UserDB]:
 		with Session(self.engine) as session:
 			# Ищем пользователя по email и password
 			statement = select(UserDB).where(UserDB.email == email, UserDB.password == password)
 			return session.exec(statement).first()
+
+	def get_user_by_email(self, email: str):
+		with Session(self.engine) as session:
+			# Ищем пользователя по email
+			statement = select(UserDB).where(UserDB.email == email)
+			return session.exec(statement).first()
+
+

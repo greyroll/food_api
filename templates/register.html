@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Register</title>
+</head>
+<body>
+    <h2>Добро пожаловать!</h2>
+    <p>Зарегистрируйтесь, чтобы войти в систему</p>
+    <p>Если вы уже зарегистрированы, вы можете войти <a href="/login">тут</a>.</p>
+    <br>
+    <br>
+    <form action="/validate_register" method="post">
+        Email:
+        <br>
+        <input type="email" name="email">
+        <br>
+        Password (пароль должен быть не короче 3 символов):
+        <br>
+        <input type="password" name="password">
+        <br>
+        <input type="submit" value="Отправить">
+        <input type="reset" value="Cбросить">
+    </form>
+</body>
+</html>
