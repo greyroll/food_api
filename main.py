@@ -151,19 +151,19 @@ async def login(request: Request, email: str = Form(...), password: str = Form(.
 	return templates_response
 
 
-@app.get("/logout", response_class=HTMLResponse)
-async def logout(request: Request):
-	templates_response = templates.TemplateResponse(request=request, name="logout.html")
-	templates_response.delete_cookie(key="access_token")
-	return templates_response
-
-
-uvicorn.run(app, host="127.0.0.1", port=8001)
-
-origins = [
-    "http://localhost",
-    "*"
-]
+# @app.get("/logout", response_class=HTMLResponse)
+# async def logout(request: Request):
+# 	templates_response = templates.TemplateResponse(request=request, name="logout.html")
+# 	templates_response.delete_cookie(key="access_token")
+# 	return templates_response
+#
+#
+# uvicorn.run(app, host="127.0.0.1", port=8001)
+#
+# origins = [
+#     "http://localhost",
+#     "*"
+# ]
 
 def setup_cors(app):
 	app.add_middleware(
