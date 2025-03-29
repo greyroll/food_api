@@ -35,25 +35,24 @@ def process_food_query(
 
     return foods
 
-
-def verify_user(jwt_manager: JWTManager, access_token: str = Cookie(default=None)):
-    if not access_token:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Access token missing"
-        )
-        # Декодируем токен с помощью твоего менеджера JWT
-    payload = jwt_manager.verify_token(access_token)
-    if payload is None:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid or expired token"
-        )
-    # Обычно в поле "sub" хранится информация об идентификаторе пользователя (например, email)
-    user_email = payload.get("sub")
-    if not user_email:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid token payload"
-        )
-    return user_email
+#
+# def verify_user(jwt_manager: JWTManager, access_token: str = Cookie(default=None)):
+#     if not access_token:
+#         raise HTTPException(
+#             status_code=status.HTTP_401_UNAUTHORIZED,
+#             detail="Access token missing"
+#         )
+#         # Декодируем токен с помощью твоего менеджера JWT
+#     payload = jwt_manager.verify_token(access_token)
+#     if payload is None:
+#         raise HTTPException(
+#             status_code=status.HTTP_401_UNAUTHORIZED,
+#             detail="Invalid or expired token"
+#         )
+#     # Обычно в поле "sub" хранится информация об идентификаторе пользователя (например, email)
+#     user_email = payload.get("sub")
+#     if not user_email:
+#         raise HTTPException(
+#             status_code=status.HTTP_401_UNAUTHORIZED,
+#             detail="Invalid token payload"
+#         )
